@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: pdf-generator-express
+    env: docker
+    buildCommand: docker build -t pdf-generator-express .
+    startCommand: docker run -p 3000:3000 pdf-generator-express
+    dockerfilePath: Dockerfile
+    plan: free
+    ports:
+      - port: 3000
